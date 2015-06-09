@@ -41,7 +41,8 @@ creates two large sparse matrices and multiplies them. The same code
 in Python and MATLAB can be found in the test/benchmarks directory.
 Similarly, full-benchmark does dense matrix multiplication on the same
 two (diagonal) matrices, and analogous benchmarks may be found in
-test/benchmarks.
+test/benchmarks. The full-benchmark test will output a file ("out.txt")
+to disk.
 
 The file src/haddock.tar.gz, when uncompressed, contains HTML files
 with haddock documentation for this library.
