@@ -18,7 +18,6 @@ import Sci.Matrix
 ----------------------------------
 
 -- |A function for numerical differentiation up to a given tolerance.
--- Should be used for regular precision functions
 differentiateTol :: (Num a, Ord a, Fractional a)
                  => (a -> a)
                  -> a
@@ -34,9 +33,7 @@ differentiateTol f a h tol
         sndlim = ((f (a + h')) - (f a)) / h'
         diff = abs $ lim - sndlim
 
--- |Differentiate regular-precision functions. Should be used when
--- the same function needs to be differentiated and integrated, as
--- integration is not high-precision. This is just a wrapper
+-- |Differentiate functions at a point. This is just a wrapper
 -- around differentiateTol.
 differentiate :: (Num a, Ord a, Fractional a) => (a -> a) -> a -> a
 differentiate f a = differentiateTol f a 0.000001 1e-9
@@ -71,7 +68,6 @@ jacobian fs xs = array ((0,0),(length fs - 1, length xs - 1)) $
                  ]
 
 -- |Numerical integration up to a given tolerance.
--- Note that this is NOT high-precision.
 integrateTol :: (Num a, Ord a, Fractional a, Enum a)
              => (a -> a)
              -> a
@@ -95,8 +91,7 @@ integrateTol f a b divs tol
         diff = abs $ firstArea - sndArea
 
 -- |Integrate function f between bounds a and b.
--- This is just a wrapper around integrateTol and
--- is NOT high-precision.
+-- This is just a wrapper around integrateTol.
 integrate :: (Num a, Ord a, Fractional a, Enum a)
           => (a -> a)
           -> a
