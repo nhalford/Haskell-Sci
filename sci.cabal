@@ -14,8 +14,10 @@ category:            Math
 build-type:          Simple
 extra-source-files:  README.txt
                      .gitignore
-                     test/benchmarks/sparse_mult.py
+                     test/benchmarks/full_mult.m
+                     test/benchmarks/full_mult.py
                      test/benchmarks/sparse_mult.m
+                     test/benchmarks/sparse_mult.py
                      src/haddock.tar.gz
 cabal-version:       >=1.10
 
@@ -28,9 +30,16 @@ library
   default-language:    Haskell2010
 
 executable sparse-benchmark
-    main-is:          SparseMult.hs
-    hs-source-dirs:   test/benchmarks
-    build-depends:    base < 5, sci, array >=0.5 && <0.6
+  main-is:            SparseMult.hs
+  hs-source-dirs:     test/benchmarks
+  build-depends:      base < 5, sci, array >=0.5 && <0.6
+  ghc-options:        -Wall
+
+executable full-benchmark
+  main-is:            FullMult.hs
+  hs-source-dirs:     test/benchmarks
+  build-depends:      base < 5, sci, array >=0.5 && <0.6
+  ghc-options:        -Wall
 
 test-suite test-sci
  hs-source-dirs:      test

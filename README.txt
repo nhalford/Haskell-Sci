@@ -39,6 +39,9 @@ cabal install --only-dependencies --enable-tests
 Running cabal build sparse-benchmark will build an executable which
 creates two large sparse matrices and multiplies them. The same code
 in Python and MATLAB can be found in the test/benchmarks directory.
+Similarly, full-benchmark does dense matrix multiplication on the same
+two (diagonal) matrices, and analogous benchmarks may be found in
+test/benchmarks.
 
 The file src/haddock.tar.gz, when uncompressed, contains HTML files
 with haddock documentation for this library.
