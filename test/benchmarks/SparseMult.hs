@@ -17,8 +17,8 @@ main = do
              Right x -> x
              Left _ -> listArray ((0,0),(0,0)) []
     -- convert to sparse matrices
-    let s1 = matrixToSparse m1
-    let s2 = matrixToSparse m2
+    let s1 = matrixToSparse m1 :: SparseMatrix Int
+    let s2 = matrixToSparse m2 :: SparseMatrix Int
     -- multiply
     let p = multSparse s1 s2
     print p

@@ -18,6 +18,8 @@ extra-source-files:  README.txt
                      test/benchmarks/full_mult.py
                      test/benchmarks/sparse_mult.m
                      test/benchmarks/sparse_mult.py
+                     test/benchmarks/rand1.txt
+                     test/benchmarks/rand2.txt
                      src/haddock.tar.gz
 cabal-version:       >=1.10
 

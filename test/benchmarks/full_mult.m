@@ -1,6 +1,7 @@
 tic;
-firstMat = diag(1:100);
-sndMat = diag(101:200);
+
+firstMat = importdata('rand1.txt',' ',0);
+sndMat = importdata('rand2.txt',' ',0);
 
 result = firstMat * sndMat
 toc
